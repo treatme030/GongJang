@@ -7,9 +7,7 @@ const WhiteButtonStyle = styled(Button)`
   color: #575f95;
   border: 1px solid #575f95;
   &:hover {
-    background: #575f95;
-    color: #fff;
-    border: 1px solid #575f95;
+    background: #c7cbea;
   }
 `;
 
