@@ -8,114 +8,66 @@ import chat from '../../style/images/chat.png';
 
 const CarouselWrapper = styled.div`
   position: relative;
-  width: 70%;
-  height: 60vh;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: 45vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  
-
   .button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 8%;
-    height: 80%;
-    background: none;
-    border: none;
-    outline: none;
-    transition: .5s;
-    &:hover {
-      cursor: pointer;
-
-      .icon {
-        color: rgb(119, 119, 119);
-      }
-    }
-  };
-
+    cursor: pointer;
+  }
   .prev {
     left: 0;
-  };
-
+  }
   .next {
     right: 0;
-  };
-
-  @media only screen and (max-width: 1024px){ // ~ 타블렛
-    width: 90%;
   }
-  @media only screen and (max-width: 768px){ // ~ 모바일
-    width: 100%;
+  @media only screen and (max-width: 425px){
+    height: 30vh;
   }
-  @media only screen and (max-width: 580px){ // ~ 모바일
-    width: 100%;
-  }
-  
 `;
 
 const CarouselBlock = styled.div`
   position: relative;
   min-width: 100%;
-  height: 80%;
+  height: 100%;
   transition: .5s;
   overflow: hidden;
   text-align: right;
-
   .carousel-text {
-    width: min-content;
-    font-size: 45px;
+    width: 30%;
+    font-size: 2rem;
     font-weight: 700;
     position: absolute;
     text-align: left;
-    top: 140px;
-    left: 80px;
-    z-index: 99;
-    min-width: 30%;
-    max-width: 30%;
-
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    z-index: 11;
     .carousel-text-third {
       font-weight: 800;
       color: #fa8072;
-
-      @media only screen and (max-width: 580px){ // ~ 모바일
-       font-weight: 700;   
-      }
     }
     
-    @media only screen and (max-width: 1024px){ // ~ 타블렛
-      font-size: 40px;
-      min-width: 35%;
-      max-width: 35%;
+    @media only screen and (max-width: 1024px){ 
+      font-size: 1.8rem;
     }
-    @media only screen and (max-width: 768px){ // ~ 모바일
-      font-size: 35px
+    @media only screen and (max-width: 768px){
+      font-size: 1.4rem;
     }
-    @media only screen and (max-width: 580px){ // ~ 모바일
-      position: static;
-      font-size: 25px;
-      font-weight: 600;
-      top: 00px;
-      left: 130px;
+    @media only screen and (max-width: 425px){
+        display: none;
     }
- 
   }
   img {
-    margin-right: 65px; 
-
-    @media only screen and (max-width: 580px){ // ~ 모바일
-      margin-right: 0px; 
-    }
+    margin-right: 5%;
   }
-
-  @media only screen and (max-width: 580px){ // ~ 모바일
-    padding-top: 12px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  @media only screen and (max-width: 425px){
+      display: flex;
+      justify-content: center;
   }
 `;
 
