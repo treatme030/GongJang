@@ -27,13 +27,16 @@ const WishListBlock = styled.div`
       right: 35%;
     }
   }
-  @media only screen and (max-width: 1024px){
+  @media only screen and (max-width: 1130px){
     width: 100%;
     margin: 0;
     padding: 0 2rem;
   }
   @media only screen and (max-width: 768px){
     padding: 0 1rem;
+    .title {
+      padding: 1rem 0;
+    }
     .title:after {
       left: 27%;
     }

@@ -67,6 +67,7 @@ const PostDetailBlock = styled.div`
     border: 2px solid #575F95;
     padding: 1rem 0;
     text-align: center;
+    word-break: keep-all;
     p {
       font-size: 1.4rem;
     }

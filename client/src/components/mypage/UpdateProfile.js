@@ -6,23 +6,22 @@ import { changeNickname, fetchUpdateUserInfo, initialize } from '../../feature/u
 import AskEditModal from '../modal/AskEditModal';
 
 const UpdateProfileBlock = styled.div`
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  margin-left: 140px;
   input {
-    width: 354px;
+    width: 90%;
     height: 40px;
     border-bottom: solid 1.2px #D4D4D4;
-    font-size: 24px;
+    font-size: 1.4rem;
     margin-right: 20px;
   }
   .update-password {
     display: flex;
     align-items: center;
     p {
-      width: 354px;
+      width: 90%;
       height: 40px;
       border-bottom: solid 1.2px #D4D4D4;
       font-size: 24px;

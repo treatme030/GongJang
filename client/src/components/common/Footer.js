@@ -35,6 +35,15 @@ const FooterBlock = styled.footer`
   @media only screen and (max-width: 768px){
     flex-direction: column;   
     gap: 0;
+    .contributers {
+      padding: 0.5rem 0;
+      li {
+        margin-right: 0;
+        h4 {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 `;
 

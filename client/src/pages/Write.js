@@ -63,7 +63,7 @@ const WriteBlock = styled.div`
     justify-content: center;
     gap: 1rem;
   }
-  @media only screen and (max-width: 1024px){
+  @media only screen and (max-width: 1130px){
     width: 100%;
     margin: 0;
     padding: 0 2rem;
@@ -71,7 +71,7 @@ const WriteBlock = styled.div`
   @media only screen and (max-width: 768px){
     padding: 0 1rem;
   }
-  @media only screen and (max-width: 425px){
+  @media only screen and (max-width: 620px){
     form {
       input {
         font-size: 1rem;
@@ -83,9 +83,15 @@ const WriteBlock = styled.div`
       }
       textarea {
         font-size: 1rem;
+        height: 300px;
         &::placeholder {
           font-size: inherit;
         }
+      }
+      .select-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
       }
     }
   }

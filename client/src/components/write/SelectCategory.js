@@ -19,12 +19,17 @@ const SelectCategoryBlock = styled.div`
     padding: 0.3rem 0;
     outline: none;
   }
-  @media only screen and (max-width: 425px){
+  @media only screen and (max-width: 620px){
+    margin-top: 1rem;
+    margin-bottom: 0;
     flex-direction: column;
     align-items: flex-start;
     label {
       font-size: 1rem;
     }
+  }
+  @media only screen and (max-width: 425px){
+    
   }
 `;
 

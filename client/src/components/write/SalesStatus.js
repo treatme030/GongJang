@@ -11,6 +11,9 @@ const SalesStatusBlock = styled.div`
     right: -70%;
     transform: translateY(-50%);
   }
+  @media only screen and (max-width: 620px){
+    margin-bottom: 1rem;
+  }
 `;
 
 const SalesStatus = ({ soldOut }) => {
