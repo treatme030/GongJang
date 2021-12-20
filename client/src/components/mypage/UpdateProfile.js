@@ -36,6 +36,10 @@ const UpdateProfileForm = styled.div`
     }
     span {
       cursor: pointer;
+      transition: .3s;
+      &:hover {
+        color: #fa8072;
+      }
     }
   }
   .update-password {
@@ -47,6 +51,12 @@ const UpdateProfileForm = styled.div`
       height: 40px;
       border-bottom: solid 1px #bcbdc4;
       font-size: 1.4rem;
+    }
+    a {
+      transition: .3s;
+      &:hover {
+        color: #fa8072;
+      }
     }
   }
   @media only screen and (max-width: 768px){

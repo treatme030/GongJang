@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import { useSelector, useDispatch} from 'react-redux';
 import UpdateProfile from '../components/mypage/UpdateProfile';
-import AskAccountDeleteModal from '../components/modal/AskAccountDeleteModal'
+import AskModal from '../components/modal/AskModal';
 import { fetchDeleteAccount, fetchLogOut } from '../feature/userSlice';
 import MyPageProfileImg from '../components/mypage/MyPageProfileImg';
-import MyPosts from '../components/mypage/MyPosts'
+import MyPosts from '../components/mypage/MyPosts';
 import NoMyPosts from '../components/mypage/NoMyPosts';
 import { fetchGetMyPosts } from '../feature/postsSlice';
 
@@ -41,9 +41,20 @@ const MyPageBlock = styled.div`
       margin-left: 1rem;
       span {
         padding: 0.5rem 0.5rem 0;
-        margin-bottom: 0.5rem;
         font-size: 1rem;
         color: #bcbdc4;
+      }
+      button {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #575F95;
+        padding: 0.5rem 0.5rem 0;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        transition: .3s;
+        &:hover {
+          color: #f9796d;
+        }
       }
     }
   }
@@ -80,18 +91,6 @@ const MyPageBlock = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 425px){
-    
-  }
-`;
-
-const DeleteButton = styled.button`
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #575F95;
-  padding: 0.5rem 0.5rem 0;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
 `;
 
 const MyPage = () => {
@@ -150,7 +149,7 @@ const MyPage = () => {
           </div>
           <div className="btn-box">
             <span>계정을 삭제하시겠습니까?</span>
-            <DeleteButton onClick={handleDeleteButton}>DELETE ACCOUNT</DeleteButton>
+            <button onClick={handleDeleteButton}>DELETE ACCOUNT</button>
           </div>
         </div>
         {
@@ -163,7 +162,12 @@ const MyPage = () => {
       </MyPageBlock>
       { 
         visible && (
-        <AskAccountDeleteModal visible={visible} onConfirm={onConfirm} onCancel={onCancel}
+        <AskModal
+        visible={visible}
+        title='회원 계정 탈퇴'
+        description='더이상 공.장을 이용하지 않으시겠습니까?'
+        onConfirm={onConfirm}
+        onCancel={onCancel}
         />
       )}
     </>

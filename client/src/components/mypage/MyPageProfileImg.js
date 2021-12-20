@@ -18,6 +18,10 @@ const MyPageProfileImgBlock = styled.div`
     justify-content: center;
     align-items: flex-end;
     cursor: pointer;
+    transition: .3s;
+    &:hover {
+      color: #fa8072;
+    }
   }
   @media only screen and (max-width: 425px){
     align-items: center;

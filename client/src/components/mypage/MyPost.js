@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
 import { fetchRemovePost } from '../../feature/postSlice';
 const MyPostBlock = styled.li`
-   width: 100%;
+  width: 100%;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     2px 2px 5px rgba(94, 104, 121, 0.3);
   background: #ffdeb7;
