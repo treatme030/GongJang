@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
+import WhiteButton from '../components/common/WhiteButton';
 import { fetchLogin, initialize } from '../feature/userSlice';
 import GoogleButton from '../components/login/GoogleButton';
 
@@ -14,90 +15,74 @@ const AuthBackground = styled.div`
 `
 
 const AuthLoginBlock = styled.div`
-  border-radius: 10px;
-  padding: 20px 20px 12px 20px;
+  border-radius: 4px;
+  padding: 1.5rem;
   max-width: 320px;
   width: 100%;
   background-color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-
-  .auth-title {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    2px 2px 5px rgba(94, 104, 121, 0.3);
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .join-btn {
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 30px;
-    color: #575f95;
-    font-weight: 700;
-    margin-bottom: 10px;
-  };
+    justify-content: center;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+    gap: 0.5rem;
+    span {
+      font-size: 0.8rem;
+      &:last-child {
+        text-decoration: underline;
+        transition: .3s;
+        &:hover {
+          color:  #f9796d;
+        }
+      }
+    }
+  }
 `;
 
 const AuthLoginForm = styled.div`
   display: flex;
   flex-direction: column;
   .auth-input-box {
-    position: relative;
-    margin-top: 30px;
     display: flex;
     align-items: end;
     justify-content: space-between;
-  };
-
+  }
   input {
-    font-size: 15px;
-    width: 180px;
-    border-bottom: solid 1.25px #D8D9DE;
-  };
-
-  .auth-input-title {
-    display: flex;
-    font-size: 15px;
-  };
+    font-size: 1.2rem;
+    width: 100%;
+    border-bottom: solid 1px #bcbdc4;
+    margin-bottom: 0.5rem;
+    &::placeholder {
+      color:  #bcbdc4;
+    }
+  }
 `;
 
 const Message = styled.div`
-  position: absolute;
-  right: 0;
-  top: 20px;
-  display: flex;
-  justify-content: end;
-  font-size: 9px;
-  color: red;
-  margin-left: 2px;
+  font-size: 0.7rem;
+  text-align: left;
+  color: #fa8072;
+  margin-bottom: 0.5rem;
 `;
 
 const ErrorMessage = styled.div`
-  position: absolute;
-  top: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  right: 50;
-  height: 100%;
-  width: 100%;
-  font-size: 13px;
-  margin-left: 2px;
+  font-size: 0.7rem;
+  text-align: left;
   color: #fa8072;
-`;
-
-const Buttons = styled.div`
-  margin-top: 35px;
 `;
 
 const LoginButton = styled(Button)`
   width: 100%;
-  height: 30px;
-  font-weight: 500;
-`;
-
-const JoinButton = styled(Button)`
-  margin-top: 5px;
-  width: 100%;
-  height: 30px;
-  color: #575f95;
-  background-color: white;
-  border: solid 1px #575f95;
-  font-weight: 500;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
 `;
 
 const Login = () => {
@@ -171,46 +156,39 @@ const Login = () => {
   return (
     <AuthBackground>
       <AuthLoginBlock>
-        <div className="auth-title">
-          Login
-        </div>
+        <h2>Login</h2>
         <AuthLoginForm onKeyPress={onKeyPress}>
           <div className="auth-input-box">
-            <div className="auth-input-title">
-              email
-            </div>
             <input
               className="auth-input"
               autoComplete="off"
               name="email"
               type="email"
+              placeholder="Email"
               value={loginInfo.email}
               onChange={handleInputEmail}
             />
-          <Message email>{emailMessage}</Message>
           </div>
+          <Message email>{emailMessage}</Message>
           <div className="auth-input-box">
-            <div className="auth-input-title">
-              password
-            </div>
             <input
               className="auth-input"
               name="password"
               type="password"
+              placeholder="Password"
               value={loginInfo.password}
               onChange={handleInputPassword}
             />
+          </div>
           <Message>{passwordMessage}</Message>
           <ErrorMessage>{serverErrorMessage}</ErrorMessage>
-          </div>
         </AuthLoginForm>
-        <Buttons>
-          <LoginButton onClick={handleSubmit}>LOGIN</LoginButton>
-          <Link to="/join">
-            <JoinButton className="cancel" >JOIN</JoinButton>
-          </Link>
-        </Buttons>
-          <GoogleButton />
+        <LoginButton onClick={handleSubmit}>LOGIN</LoginButton>
+        <GoogleButton />
+        <Link to="/join" className="join-btn">
+          <span>아직 회원이 아니신가요? </span>
+          <span><b>JOIN</b></span>
+        </Link>
       </AuthLoginBlock>
     </AuthBackground>
   );

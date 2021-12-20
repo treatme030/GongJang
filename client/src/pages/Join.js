@@ -3,8 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
+import WhiteButton from '../components/common/WhiteButton';
 import { fetchSignUp, initialize } from '../feature/userSlice';
-
 
 const AuthBackground = styled.div`
   height: 80vh;
@@ -14,96 +14,67 @@ const AuthBackground = styled.div`
 `
 
 const AuthJoinBlock = styled.div`
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 4px;
+  padding: 1.5rem;
   max-width: 320px;
   width: 100%;
-  background-color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    2px 2px 5px rgba(94, 104, 121, 0.3);
   display: flex;
   flex-direction: column;
-
-  .auth-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: #575f95;
-    font-weight: 700;
-  };
-
-  .auth-message-box {
-    position: relative;
-    padding-top: 4px;
-    padding-bottom: 1px;
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
   }
+  .btns {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    a {
+      flex: 1;
+    }
+  }
+`;
+
+const CancelButton = styled(WhiteButton)`
+  width: 100%;
+  padding: 0.5rem 0;
+`;
+
+const JoinButton = styled(Button)`
+  flex: 1;
+  padding: 0.5rem 0;
 `;
 
 const AuthJoinForm = styled.div`
   display: flex;
   flex-direction: column;
-
   .auth-input-box {
-    position: relative;
-    margin-top: 25px;
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-  };
-
-  input {
-    width: 155px;
-    border-bottom: solid 1.25px #D8D9DE;
-  };
-
-  .auth-input-title {
-    display: flex;
-    min-width: fit-content;
-    font-size: 14px;
-  };
+    input {
+      font-size: 1.2rem;
+      width: 100%;
+      border-bottom: solid 1px #bcbdc4;
+      margin-bottom: 0.5rem;
+      &::placeholder {
+        color:  #bcbdc4;
+      }
+    }
+  }
 `;
 
 const Message = styled.div`
-  position: absolute;
-  right: 0;
-  top: 20px;
-  display: flex;
-  justify-content: end;
-  font-size: 9px;
-  color: red;
-  margin-left: 2px;
+ font-size: 0.7rem;
+  text-align: left;
+  color: #fa8072;
+  margin-bottom: 0.5rem;
 `;
 
 const ErrorMessage = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-size: 13px;
+  font-size: 0.7rem;
+  text-align: left;
   color: #fa8072;
-  margin-left: 2px;
-`;
-
-const Buttons = styled.div`
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const CancelButton = styled(Button)`
-  width: 135px;
-  margin-right: 10px;
-  height: 30px;
-  color: #575f95;
-  background-color: white;
-  border: solid 1px #575f95;
-  font-weight: 500;
-`;
-
-const JoinButton = styled(Button)`
-  width: 150px;
-  height: 30px;
-  font-weight: 500;
 `;
 
 const Join = () => {
@@ -203,73 +174,63 @@ const Join = () => {
   return (
     <AuthBackground>
       <AuthJoinBlock>
-        <div className="auth-title">
+        <h2 className="auth-title">
           Join
-        </div>
+        </h2>
         <AuthJoinForm onKeyPress={onKeyPress}>
           <div className="auth-input-box">
-            <div className="auth-input-title">
-              nickname
-            </div>
             <input
               className="auth-input"
               autoComplete="off"
               name="nickname"
               type="text"
+              placeholder="Nickname"
               value={joinInfo.nickname}
               onChange={handleInputNickname}
             />
-          <Message>{nicknameMessage}</Message>
           </div>
+          <Message>{nicknameMessage}</Message>
           <div className="auth-input-box">
-            <div className="auth-input-title">
-              email
-            </div>
             <input
               className="auth-input"
               autoComplete="off"
               name="email"
               type="email"
+              placeholder="Email"
               value={joinInfo.email}
               onChange={handleInputEmail}
             />
-          <Message>{emailMessage}</Message>
           </div>
+          <Message>{emailMessage}</Message>
           <div className="auth-input-box">
-            <div className="auth-input-title">
-              password
-            </div>
             <input
               className="auth-input"
               name="password"
               type="password"
+              placeholder="Password"
               value={joinInfo.password}
               onChange={handleInputPassword}
             />
-          <Message>{passwordMessage}</Message>
           </div>
+          <Message>{passwordMessage}</Message>
           <div className="auth-input-box">
-            <div className="auth-input-title">
-              confirm password
-            </div>
             <input
               className="auth-input"
               name="confirmPassword"
               type="password"
+              placeholder="Confirm password"
               value={joinInfo.confirmPassword}
               onChange={handleInputConfirmPassword}
             />
-            <Message>{confirmPasswordMessage}</Message>
           </div>
+          <Message>{confirmPasswordMessage}</Message>
+          <ErrorMessage>{serverErrorMessage}</ErrorMessage>
         </AuthJoinForm>
-        <Buttons>
+        <div className="btns">
           <Link to="/login">
           <CancelButton>CANCEL</CancelButton>
           </Link>
           <JoinButton onClick={handleSubmit}>JOIN</JoinButton>
-        </Buttons>
-        <div className="auth-message-box">
-          <ErrorMessage>{serverErrorMessage}</ErrorMessage>
         </div>
       </AuthJoinBlock>
     </AuthBackground>
