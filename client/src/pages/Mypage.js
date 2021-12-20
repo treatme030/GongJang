@@ -13,8 +13,13 @@ import { fetchGetMyPosts } from '../feature/postsSlice';
 const MyPageBlock = styled.div`
   width: 1130px;
   margin: 0 auto;
+  .profile-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 2rem;
+  }
   .wrap {
-    margin-top: 45px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -37,26 +42,26 @@ const MyPageBlock = styled.div`
       span {
         padding: 0.5rem 0.5rem 0;
         margin-bottom: 0.5rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        color: #bcbdc4;
       }
     }
   }
-  .profile-wrap {
-    padding: 30px 70px;
-    display: flex;
-  }
-  @media only screen and (max-width: 1024px){
+  @media only screen and (max-width: 1130px){
     width: 100%;
     margin: 0;
     padding: 0 2rem;
-  }
-  @media only screen and (max-width: 768px){
-    padding: 0 1rem;
     .profile-wrap {
       padding: 0;
     }
   }
-  @media only screen and (max-width: 425px){
+  @media only screen and (max-width: 768px){
+    padding: 0 1rem;
+    .profile-wrap {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
     .wrap {
       margin-top: 1rem;
       .info {
@@ -74,9 +79,9 @@ const MyPageBlock = styled.div`
         }
       }
     }
-    .profile-wrap {
-      flex-direction: column;
-    }
+  }
+  @media only screen and (max-width: 425px){
+    
   }
 `;
 
@@ -88,8 +93,6 @@ const DeleteButton = styled.button`
   cursor: pointer;
   margin-bottom: 0.5rem;
 `;
-
-
 
 const MyPage = () => {
 

@@ -2,24 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import MyPost from './MyPost';
 
-const MyPostsBlock = styled.div`
-  width: 1130px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
+const MyPostsBlock = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2.7rem;
-  flex-wrap: wrap;
-  padding: 2rem 0 4rem;
-  @media only screen and (max-width: 1024px){
+  padding: 2rem 0;
+  @media only screen and (max-width: 1240px){
     width: 100%;
-    margin: 0;
-    padding: 2rem 0;
-    gap: 2.8rem;
   }
   @media only screen and (max-width: 768px){
-    padding: 2rem 0;
-    width: 100%;
-    gap: 2.5rem;
+    gap: 1rem;
   }
 `;
 

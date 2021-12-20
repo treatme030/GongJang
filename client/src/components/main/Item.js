@@ -72,7 +72,7 @@ const ItemBlock = styled.li`
   }
   @media only screen and (max-width: 563px){
     .item-img {
-      height: 320px;
+      height: 300px;
     }
   }
 `;

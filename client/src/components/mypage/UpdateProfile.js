@@ -6,69 +6,62 @@ import { changeNickname, fetchUpdateUserInfo, initialize } from '../../feature/u
 import AskEditModal from '../modal/AskEditModal';
 
 const UpdateProfileBlock = styled.div`
-  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  input {
-    width: 90%;
-    height: 40px;
-    border-bottom: solid 1.2px #D4D4D4;
-    font-size: 1.4rem;
-    margin-right: 20px;
-  }
-  .update-password {
-    display: flex;
-    align-items: center;
-    p {
-      width: 90%;
-      height: 40px;
-      border-bottom: solid 1.2px #D4D4D4;
-      font-size: 24px;
-      margin-right: 20px;
-    }
-  }
-  @media only screen and (max-width: 425px){
+  @media only screen and (max-width: 768px){
     margin-left: 0;
     h1 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       text-align: center;
       margin-bottom: 1rem;
       span {
         font-size: inherit;
       }
     }
-    input, span {
-      width: 100%;
-      font-size: 1rem;
-      margin-right: 0;
-    }
-    .update-password {
-      flex-direction: column;
-      align-items: flex-start;
-      p {
-        width: 100%;
-        font-size: 1rem;
-        margin-right: 0;
-        padding-top: 0.5rem;
-      }
-    }
   }
 `;
 
 const UpdateProfileForm = styled.div`
-  div {
-    margin-bottom: 30px;
-  }
   .update-nickname {
     position: relative;
+    margin-bottom: 2rem;
+    input {
+      height: 40px;
+      border-bottom: solid 1px #bcbdc4;
+      font-size: 1.4rem;
+      &::placeholder {
+        color: #bcbdc4;
+      }
+    }
     span {
       cursor: pointer;
     }
   }
-  @media only screen and (max-width: 425px){
-    div {
-      margin-bottom: 1rem;
+  .update-password {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    p {
+      flex: 1;
+      height: 40px;
+      border-bottom: solid 1px #bcbdc4;
+      font-size: 1.4rem;
+    }
+  }
+  @media only screen and (max-width: 768px){
+    .update-nickname {
+      margin-bottom: 0.5rem;
+      input {
+        height: 30px;
+        font-size: 1rem;
+      }
+    }
+    .update-password {
+      p {
+        height: 30px;
+        font-size: 1rem;
+      }
     }
   }
 `;
@@ -82,7 +75,6 @@ const ErrorMessage = styled.div`
   font-size: 13px;
   color: #fa8072;
 `;
-
 
 const UpdateProfile = ({ user, userInfoError, isEdited, setNewNickname, newNickname }) => {
   const dispatch = useDispatch();
@@ -126,7 +118,7 @@ const UpdateProfile = ({ user, userInfoError, isEdited, setNewNickname, newNickn
     if(userInfoError){
       setServerErrorMessage(userInfoError);
     }
-    return () => { //언마운트될 때 초기화
+    return () => {
       dispatch(initialize());
     }
   },[dispatch, history, isEdited, userInfoError])
@@ -134,7 +126,7 @@ const UpdateProfile = ({ user, userInfoError, isEdited, setNewNickname, newNickn
   return (
     <>
       <UpdateProfileBlock>
-        <h1><span>{user ? user.nickname : ""}</span> 님, 안녕하세요.</h1>
+        <h1><span>{user ? user.nickname : ""}</span>님, 안녕하세요.</h1>
         <UpdateProfileForm onKeyPress={onKeyPress}>
           <div className="update-nickname">
             <input 

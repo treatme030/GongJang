@@ -4,9 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
 import { fetchRemovePost } from '../../feature/postSlice';
-const MyPostBlock = styled.div`
-  max-width: 250px;
-  width: 100%;
+const MyPostBlock = styled.li`
+   width: 100%;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     2px 2px 5px rgba(94, 104, 121, 0.3);
   background: #ffdeb7;
@@ -16,7 +15,6 @@ const MyPostBlock = styled.div`
     height: 200px;
     overflow: hidden;
     a {
-      position: relative;
       display: block;
       width: 100%;
       height: 100%;
@@ -45,7 +43,7 @@ const MyPostBlock = styled.div`
         color: #fff;
         background:#f9796d;
         padding: 0 0.2rem 0.1rem;
-        border-radius: 9px 0 0 0 ;
+        border-radius: 4px 0 0 0 ;
       }
     }
     .sold-out.show {
@@ -64,17 +62,21 @@ const MyPostBlock = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-  }
-  @media only screen and (max-width: 1024px){
-    max-width: 450px;
-    .item-img {
-      height: 370px;
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .check-wish {
+      cursor: pointer;
     }
   }
-  @media only screen and (max-width: 768px){
-    max-width: 340px;
+  @media only screen and (max-width: 1240px){
+    width: 100%;
+  }
+  @media only screen and (max-width: 563px){
     .item-img {
-      max-height: 300px;
+      height: 300px;
     }
   }
 `;
