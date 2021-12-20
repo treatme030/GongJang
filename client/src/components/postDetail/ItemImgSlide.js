@@ -43,6 +43,22 @@ const ItemImgSlideBlock = styled.div`
       cursor: pointer;
     }
   }
+  @media only screen and (max-width: 425px){
+    margin: 1rem 0 3rem;
+    .slide-box {
+      .prev {
+        left: 30%;
+      }
+      .next {
+        right: 30%;
+      }
+      .prev, 
+      .next {
+        top: 100%;
+        transform: translateY(0);
+      }
+    }
+  }
 `;
 
 const ItemImgSlide = ({ post }) => {

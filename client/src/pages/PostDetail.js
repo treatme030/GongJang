@@ -94,17 +94,16 @@ const PostDetailBlock = styled.div`
       cursor: pointer;
     }
   }
-  @media only screen and (max-width: 1024px){
+  @media only screen and (max-width: 1130px){
     width: 100%;
     margin: 0;
     padding: 0 2rem;
   }
   @media only screen and (max-width: 768px){
-    padding: 0 1rem;
-  }
-  @media only screen and (max-width: 425px){
     font-size: 1rem;
+    padding: 0 1rem;
     .title {
+      margin: 1rem 0;
       h3 {
         font-size: 1.4rem;
       }
@@ -123,6 +122,7 @@ const PostDetailBlock = styled.div`
       }
     }
     .desc {
+      height: 300px;
       p {
         font-size: 1rem;
       }
