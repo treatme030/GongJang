@@ -10,21 +10,17 @@ const CategoryList = styled.ul`
   justify-content: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-
   .category-menu {
     cursor: pointer;
-    padding: 2px 8px;
-
+    padding: 0.2rem 0.3rem;
+    border: 1px solid #dadcec;
+    border-radius: 4px;
+    transition: .3s;
     &:hover {
-      color: white;
-      font-weight: 600;
-      background: #fa8072;
-      border-radius: 5px;
+      color: #fa8072;
+      border: 1px solid #fa8072;
     }
   }
-
   @media only screen and (max-width: 768px){
     gap: 0;
   }
