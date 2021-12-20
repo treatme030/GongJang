@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
-import WhiteButton from '../components/common/WhiteButton';
 import { fetchLogin, initialize } from '../feature/userSlice';
 import GoogleButton from '../components/login/GoogleButton';
 
