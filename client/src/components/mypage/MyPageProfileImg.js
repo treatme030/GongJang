@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { changeProfileImage, fetchUpdateProfileImage } from '../../feature/userSlice';
-import AskEditModal from '../modal/AskEditModal';
+import AskModal from '../modal/AskModal';
 
 const MyPageProfileImgBlock = styled.div`
   display: flex;
@@ -103,9 +103,13 @@ const MyPageProfileImg = ({previewProfileImage, setPreviewProfileImage}) => {
           />
         </div>
       </MyPageProfileImgBlock>
-      { 
-        visible && (
-        <AskEditModal visible={visible} onConfirm={onConfirm} onCancel={onCancel}
+      { visible && (
+        <AskModal
+        visible={visible}
+        title='회원 정보 변경'
+        description='입력하신 내용으로 변경하시겠습니까?'
+        onConfirm={onConfirm}
+        onCancel={onCancel}
         />
       )}
     </>

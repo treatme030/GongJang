@@ -18,18 +18,15 @@ const NoResult = () => {
     flex-direction: column;
     align-items: center;
   }
-  
   .no-result-icon { 
     font-size: 150px;
   }
-
   .no-result-message {
     margin-top: 30px;
     font-size: 25px;
     width: 100%;
     display: flex;
     justify-content: center;
-    
     span {
       text-align: center;
     }

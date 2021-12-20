@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { changeNickname, fetchUpdateUserInfo, initialize } from '../../feature/userSlice';
-import AskEditModal from '../modal/AskEditModal';
+import AskModal from '../modal/AskModal';
 
 const UpdateProfileBlock = styled.div`
   display: flex;
@@ -157,11 +157,13 @@ const UpdateProfile = ({ user, userInfoError, isEdited, setNewNickname, newNickn
       </UpdateProfileBlock>
       {
         visible && ( 
-        <AskEditModal 
-        visible={visible} 
-        onCancel={onCancel} 
-        onConfirm={onConfirm} 
-        /> 
+          <AskModal
+          visible={visible}
+          title='회원 정보 변경'
+          description='입력하신 내용으로 변경하시겠습니까?'
+          onConfirm={onConfirm}
+          onCancel={onCancel}
+          />
         )
       }
     </>
