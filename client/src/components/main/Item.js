@@ -8,7 +8,6 @@ import { changeWish } from '../../feature/postsSlice';
 import DefaultImg from '../../style/images/defaultImg.png';
 
 const ItemBlock = styled.li`
-  max-width: 250px;
   width: 100%;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     2px 2px 5px rgba(94, 104, 121, 0.3);
@@ -68,16 +67,12 @@ const ItemBlock = styled.li`
       cursor: pointer;
     }
   }
-  @media only screen and (max-width: 1024px){
-    max-width: 450px;
-    .item-img {
-      height: 370px;
-    }
+  @media only screen and (max-width: 1240px){
+    width: 100%;
   }
-  @media only screen and (max-width: 768px){
-    max-width: 340px;
+  @media only screen and (max-width: 563px){
     .item-img {
-      max-height: 300px;
+      height: 320px;
     }
   }
 `;

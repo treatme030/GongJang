@@ -3,17 +3,15 @@ import styled from 'styled-components';
 import Item from './Item';
 
 const ItemListBlock = styled.ul`
-  display: flex;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2.7rem;
-  flex-wrap: wrap;
   padding: 2rem 0 4rem;
-  @media only screen and (max-width: 1024px){
-    gap: 2.8rem;
+  @media only screen and (max-width: 1240px){
+    width: 100%;
   }
   @media only screen and (max-width: 768px){
-    width: 100%;
-    gap: 2.5rem;
+    gap: 1rem;
   }
 `;
 
