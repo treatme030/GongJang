@@ -42,6 +42,10 @@ const SidebarBlock = styled.div`
     li {
       border-bottom: 1px solid rgba(221,226,229,.5);
       cursor: pointer;
+      transition: .3s;
+      &:hover {
+        color: #f9796d;
+      }
       a {
         display: block;
         padding: 1rem 0;
