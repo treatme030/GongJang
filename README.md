@@ -25,9 +25,26 @@
 ## 🔗 배포 링크
 ### ➡️ [배포 링크](https://gongjang.tk) ⬅️
 
-## 🖋 팀원
+## 👫 팀원
+ * 프론트엔드(정지우, 김주희)
+ 
+![지우](https://user-images.githubusercontent.com/74355328/146856492-c48274c2-b73f-4fb8-9e23-6601e4c84b78.png)![나나](https://user-images.githubusercontent.com/74355328/146856489-17003cff-d4d0-47c5-a1ea-a4b3ce8bb8d5.png)
 
-## 🖋 기능시연(gif)
+
+ * 백엔드(양진영, 한수현)
+
+![진영](https://user-images.githubusercontent.com/74355328/146856483-609c2f0c-c936-493a-9edd-f0918ea610f3.png)![수현](https://user-images.githubusercontent.com/74355328/146856481-cc532e4a-d5ac-44f7-8fd8-dd6b283a6b74.png)
+
+
+
+## 🎥 기능시연(gif)
+ * 웹 기능시연
+ 
+ ![aaa](https://user-images.githubusercontent.com/74355328/146855020-4dc03da6-d818-4823-8361-36b5d1ec90bd.gif)
+ 
+ * 반응형 기능시연
+ 
+ ![반반](https://user-images.githubusercontent.com/74355328/146855859-a7e073dd-04e5-4bdb-ab9c-e17f43e8de68.gif)
 
 ## 🖋 More Info... 
 스택, 프로토타입, DB스키마, API문서, 위키(링크)
