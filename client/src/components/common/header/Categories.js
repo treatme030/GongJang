@@ -1,0 +1,54 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+import { fetchGetAllPosts } from '../../../feature/postsSlice';
+
+const CategoryList = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  .category-menu {
+    cursor: pointer;
+    padding: 0.2rem 0.3rem;
+    border: 1px solid #dadcec;
+    border-radius: 4px;
+    transition: .3s;
+    &:hover {
+      color: #fa8072;
+      border: 1px solid #fa8072;
+    }
+  }
+  @media only screen and (max-width: 768px){
+    gap: 0;
+  }
+`;
+
+const Categories = ({ categories }) => {
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleCategory = (category) => {
+    history.push('/')
+    if(category === '전체'){
+      setTimeout(() => {dispatch(fetchGetAllPosts())}, 300)
+    } else {
+      setTimeout(() => {dispatch(fetchGetAllPosts({ category : category }))}, 300)
+    }
+  }
+
+  return (
+    <CategoryList>
+      {
+        categories.map((category, idx) => 
+          <li className="category-menu" key={idx} onClick={() => handleCategory(category, idx)} >{category}</li>
+        )
+      }
+    </CategoryList>
+  );
+};
+
+export default Categories;
