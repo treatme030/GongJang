@@ -22,18 +22,6 @@
  * 마이페이지에서 자신이 쓴 글을 관리할 수 있습니다.
  * 버려질 수 있는 장난감을 나눔을 통해 환경 문제 해결에 기여할 수 있습니다.
 
-## 🔗 배포 링크
-### ➡️ [배포 링크](https://gongjang.tk) ⬅️
-
-## 👫 팀원
- * 프론트엔드(정지우, 김주희)
- 
-![지우](https://user-images.githubusercontent.com/74355328/146856492-c48274c2-b73f-4fb8-9e23-6601e4c84b78.png)![나나](https://user-images.githubusercontent.com/74355328/146856489-17003cff-d4d0-47c5-a1ea-a4b3ce8bb8d5.png)
-
-
- * 백엔드(양진영, 한수현)
-
-![진영](https://user-images.githubusercontent.com/74355328/146856483-609c2f0c-c936-493a-9edd-f0918ea610f3.png)![수현](https://user-images.githubusercontent.com/74355328/146856481-cc532e4a-d5ac-44f7-8fd8-dd6b283a6b74.png)
 
 ## 🌟 기능구현한 부분
  * 메인 페이지, 글작성 페이지, 글상세 페이지, 헤더, 푸터, 버튼, 모달 목업 및 스타일
@@ -49,13 +37,27 @@
  * 프로토타입 작성
 
 ## 🎥 기능시연(gif)
- * 웹 기능시연
+ * 웹 
  
- ![aaa](https://user-images.githubusercontent.com/74355328/146855020-4dc03da6-d818-4823-8361-36b5d1ec90bd.gif)
+ ![gg](https://user-images.githubusercontent.com/74355328/147360903-3f43aa5d-1248-4187-b196-0610fdd4f794.gif)
  
- * 반응형 기능시연
+ * 반응형
  
  ![반반](https://user-images.githubusercontent.com/74355328/146855859-a7e073dd-04e5-4bdb-ab9c-e17f43e8de68.gif)
+
+## 👫 팀원
+ * 프론트엔드(정지우, 김주희)
+ 
+![지우](https://user-images.githubusercontent.com/74355328/146856492-c48274c2-b73f-4fb8-9e23-6601e4c84b78.png)![나나](https://user-images.githubusercontent.com/74355328/146856489-17003cff-d4d0-47c5-a1ea-a4b3ce8bb8d5.png)
+
+
+ * 백엔드(양진영, 한수현)
+
+![진영](https://user-images.githubusercontent.com/74355328/146856483-609c2f0c-c936-493a-9edd-f0918ea610f3.png)![수현](https://user-images.githubusercontent.com/74355328/146856481-cc532e4a-d5ac-44f7-8fd8-dd6b283a6b74.png)
+
+ 
+## 🔗 배포 링크
+### ➡️ [배포 링크](https://gongjang.tk) ⬅️
 
 ## 🛠 Teck Stack
 
