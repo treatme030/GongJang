@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { fetchGetAllPosts } from '../../../feature/postsSlice';
+import palette from '../../../style/palette';
 
 const CategoryList = styled.ul`
   display: flex;
@@ -13,12 +14,11 @@ const CategoryList = styled.ul`
   .category-menu {
     cursor: pointer;
     padding: 0.2rem 0.3rem;
-    border: 1px solid #dadcec;
     border-radius: 4px;
     transition: .3s;
     &:hover {
-      color: #fa8072;
-      border: 1px solid #fa8072;
+      color: #fff;
+      background: ${palette.pink[1]};
     }
   }
   @media only screen and (max-width: 768px){
@@ -44,7 +44,7 @@ const Categories = ({ categories }) => {
     <CategoryList>
       {
         categories.map((category, idx) => 
-          <li className="category-menu" key={idx} onClick={() => handleCategory(category, idx)} >{category}</li>
+          <Link to={`/?category=${category}`} className="category-menu" key={idx} onClick={() => handleCategory(category, idx)} >{category}</Link>
         )
       }
     </CategoryList>
