@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import palette from '../../style/palette';
 
 const WhiteButtonStyle = styled(Button)`
   background: #fff;
-  color: #575f95;
-  border: 1px solid #575f95;
+  color: ${palette.blue[2]};
+  border: 1px solid ${palette.blue[2]};
   &:hover {
-    background: #c7cbea;
+    background: ${palette.blue[1]};
   }
 `;
 

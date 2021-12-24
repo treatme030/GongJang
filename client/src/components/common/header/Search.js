@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import Categories from './Categories';
 import { fetchGetAllPosts } from '../../../feature/postsSlice';
 import { useHistory } from 'react-router-dom';
+import palette from '../../../style/palette';
 
 const SearchBlock = styled.div`
   .wrap {
@@ -27,10 +28,10 @@ const SearchBlock = styled.div`
         input {
           width: 100%;
           font-size: 1.3rem;
-          border-bottom: 1px solid #575F95;
+          border-bottom: 1px solid ${palette.blue[2]};
           padding-bottom: 0.2rem;
           &::placeholder {
-            color: #828cbf;
+            color: ${palette.blue[3]};
           }
         }
         .search-icon {

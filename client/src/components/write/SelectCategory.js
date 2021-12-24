@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { changeCategory } from '../../feature/writeSlice';
+import palette from '../../style/palette';
 
 const SelectCategoryBlock = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const SelectCategoryBlock = styled.div`
     font-size: 1.2rem;
     margin-right: 0.5rem;
     span {
-      color: #bcbdc4;
+      color: ${palette.gray[0]};
     }
   }
   select {
@@ -27,9 +28,6 @@ const SelectCategoryBlock = styled.div`
     label {
       font-size: 1rem;
     }
-  }
-  @media only screen and (max-width: 425px){
-    
   }
 `;
 

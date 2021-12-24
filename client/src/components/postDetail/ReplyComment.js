@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { fetchGetAllrecomments } from '../../feature/commentSlice';
 import ReplyContent from './ReplyContent';
 import { RiArrowDownSFill } from 'react-icons/ri';
+import palette from '../../style/palette';
 
 const ReplyCommentBlock = styled.div`
   .reply-count {
     margin-bottom: 0.5rem;
     cursor: pointer;
     span {
-      color: #f9796d;
+      color: ${palette.pink[2]};
     }
   }
 `;

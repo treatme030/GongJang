@@ -2,11 +2,12 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { RiImageAddLine } from 'react-icons/ri';
 import { FaTimes } from 'react-icons/fa';
+import palette from '../../style/palette';
 
 const ImgUploadBlock = styled.div`
   margin: 1.5rem 0 0;
   p {
-    color: #bcbdc4;
+    color: ${palette.gray[0]};
   }
 `;
 
@@ -40,7 +41,7 @@ const ImgPreviewBox = styled.div`
     position: relative;
     max-width: 200px;
     width: 100%;
-    background: #fcb0a9;
+    background: ${palette.pink[0]};
     .img-plus {
       position: absolute;
       top: 50%;

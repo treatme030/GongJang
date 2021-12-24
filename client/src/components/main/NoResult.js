@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BsFillEmojiNeutralFill } from 'react-icons/bs'
-const NoResult = () => {
+import { BsFillEmojiNeutralFill } from 'react-icons/bs';
 
-  const NoResultBlock = styled.div`
+const NoResultBlock = styled.div`
   height: 80vh;
   position: relative;
   .no-result-box {
@@ -32,6 +31,8 @@ const NoResult = () => {
     }
   }
 `;
+
+const NoResult = () => {
 
   return (
     <NoResultBlock>

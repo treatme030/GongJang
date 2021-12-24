@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { changeProfileImage, fetchUpdateProfileImage } from '../../feature/userSlice';
 import AskModal from '../modal/AskModal';
+import palette from '../../style/palette';
 
 const MyPageProfileImgBlock = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const MyPageProfileImgBlock = styled.div`
     cursor: pointer;
     transition: .3s;
     &:hover {
-      color: #fa8072;
+      color:  ${palette.pink[1]};
     }
   }
   @media only screen and (max-width: 425px){

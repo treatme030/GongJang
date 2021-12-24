@@ -12,13 +12,14 @@ import checkTime from '../lib/Time';
 import { RiHeartFill, RiHeartLine } from 'react-icons/ri';
 import { fetchGetAllComments, unloadComment } from '../feature/commentSlice';
 import { fetchRemoveWish, fetchWish } from '../feature/wishSlice';
+import palette from '../style/palette';
 
 const PostDetailBlock = styled.div`
   width: 1130px;
   margin: 0 auto;
   .title {
     position: relative;
-    border-bottom: 2px solid #575F95;
+    border-bottom: 2px solid ${palette.blue[2]};
     margin: 3rem 0 2rem;
     h3 {
       text-align: center;
@@ -31,7 +32,7 @@ const PostDetailBlock = styled.div`
       bottom: 0;
       font-size: 1.2rem;
       color: #fff;
-      background: #fa8072;
+      background: ${palette.pink[1]};
       padding: 0.5rem;
       border-radius: 4px;
     }
@@ -43,7 +44,7 @@ const PostDetailBlock = styled.div`
     .info {
       padding: 0.8rem;
       color: #fff;
-      background: #575F95;
+      background: ${palette.blue[2]};
       border-radius: 20px 20px 0 0;
       p {
         font-size: 1.2rem;
@@ -53,18 +54,18 @@ const PostDetailBlock = styled.div`
       font-size: 1.2rem;
       font-weight: 600;
       margin-left: 1rem;
-      color: #575F95;
+      color: ${palette.blue[2]};
       padding: 0.5rem 0.5rem 0;
       cursor: pointer;
       transition: .3s;
       &:hover {
-        color: #f9796d;
+        color: ${palette.pink[2]};
       }
     }
   }
   .desc {
     height: 400px;
-    border: 2px solid #575F95;
+    border: 2px solid ${palette.blue[2]};
     padding: 1rem 0;
     text-align: center;
     word-break: keep-all;

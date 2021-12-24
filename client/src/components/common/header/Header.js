@@ -10,6 +10,7 @@ import { CgMenuCheese } from 'react-icons/cg';
 import { FiSearch } from 'react-icons/fi';
 import Sidebar from './Sidebar';
 import Logo from '../../../style/images/logo.png';
+import palette from '../../../style/palette';
 
 const HeaderBlock = styled.header`
     width: 100%;
@@ -23,7 +24,6 @@ const HeaderLayoutStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #575F95;
     .space {
         flex: 1;
     }
@@ -57,7 +57,7 @@ const HeaderLayoutStyle = styled.div`
         left: 0;
         right: 0;
         width: 100%;
-        background: #dadcec;
+        background: ${palette.blue[1]};
         transform: translateY(-120%);
         transition: transform .4s;
         z-index: 10;
@@ -100,10 +100,9 @@ const MenuBoxBlock = styled.div`
         font-size: 0.9rem;
         li {
             display: flex;
-            color: #575f95;
             transition: .3s;
             &:hover {
-                color: #f9796d;
+                color: ${palette.pink[2]};
             }
             a {
                padding: 0.5rem 1.5rem 0;

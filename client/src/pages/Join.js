@@ -5,18 +5,19 @@ import styled from 'styled-components';
 import Button from '../components/common/Button';
 import WhiteButton from '../components/common/WhiteButton';
 import { fetchSignUp, initialize } from '../feature/userSlice';
+import palette from '../style/palette';
 
 const AuthBackground = styled.div`
   height: 80vh;
   display:flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const AuthJoinBlock = styled.div`
   border-radius: 4px;
-  padding: 1.5rem;
-  max-width: 320px;
+  padding: 2rem;
+  max-width: 360px;
   width: 100%;
   background-color: #fff;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
@@ -55,10 +56,10 @@ const AuthJoinForm = styled.div`
     input {
       font-size: 1.2rem;
       width: 100%;
-      border-bottom: solid 1px #bcbdc4;
+      border-bottom: solid 1px ${palette.gray[0]};
       margin-bottom: 0.5rem;
       &::placeholder {
-        color:  #bcbdc4;
+        color: ${palette.gray[0]};
       }
     }
   }
@@ -67,14 +68,14 @@ const AuthJoinForm = styled.div`
 const Message = styled.div`
  font-size: 0.7rem;
   text-align: left;
-  color: #fa8072;
+  color: ${palette.pink[1]};
   margin-bottom: 0.5rem;
 `;
 
 const ErrorMessage = styled.div`
   font-size: 0.7rem;
   text-align: left;
-  color: #fa8072;
+  color: ${palette.pink[1]};
 `;
 
 const Join = () => {

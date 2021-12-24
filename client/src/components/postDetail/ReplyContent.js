@@ -4,6 +4,7 @@ import checkTime from '../../lib/Time';
 import { BsArrowReturnRight } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { editRecomment, fetchRemoverecomment, fetchUpdatrecomment, removeRecomment } from '../../feature/commentSlice';
+import palette from '../../style/palette';
 
 const ReplyContentBlock = styled.div`
   margin-left: 1.3rem;
@@ -15,7 +16,7 @@ const ReplyContentBlock = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-bottom: 2px solid #575F95;
+    border-bottom: 2px solid ${palette.blue[2]};
     .text {
       width: 100%;
       margin-left: 1rem;

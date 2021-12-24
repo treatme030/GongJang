@@ -9,6 +9,7 @@ import MyPageProfileImg from '../components/mypage/MyPageProfileImg';
 import MyPosts from '../components/mypage/MyPosts';
 import NoMyPosts from '../components/mypage/NoMyPosts';
 import { fetchGetMyPosts } from '../feature/postsSlice';
+import palette from '../style/palette';
 
 const MyPageBlock = styled.div`
   width: 1130px;
@@ -23,11 +24,11 @@ const MyPageBlock = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    border-bottom: 2px solid #575F95;
+    border-bottom: 2px solid ${palette.blue[2]};
     .info {
       padding: 0.8rem;
       color: #fff;
-      background: #575F95;
+      background: ${palette.blue[2]};
       border-radius: 20px 20px 0 0;
       p {
         font-size: 1.2rem;
@@ -42,18 +43,18 @@ const MyPageBlock = styled.div`
       span {
         padding: 0.5rem 0.5rem 0;
         font-size: 1rem;
-        color: #bcbdc4;
+        color: ${palette.gray[0]};
       }
       button {
         font-size: 1.2rem;
         font-weight: 600;
-        color: #575F95;
+        color: ${palette.blue[2]};
         padding: 0.5rem 0.5rem 0;
         cursor: pointer;
         margin-bottom: 0.5rem;
         transition: .3s;
         &:hover {
-          color: #f9796d;
+          color: ${palette.pink[2]};
         }
       }
     }

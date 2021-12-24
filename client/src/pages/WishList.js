@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Wish from '../components/wishlist/Wish';
 import { fetchGetAllPosts } from '../feature/postsSlice';
+import palette from '../style/palette';
 
 const WishListBlock = styled.div`
   width: 1130px;
@@ -18,7 +19,7 @@ const WishListBlock = styled.div`
       top: 50%;
       height: 2px;
       width: 50px;
-      background: #575f95;
+      background: ${palette.blue[2]};
     }
     &:after {
       left: 35%;

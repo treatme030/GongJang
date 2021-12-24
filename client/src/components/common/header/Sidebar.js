@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FiEdit, FiHeart } from 'react-icons/fi';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FaTimes } from 'react-icons/fa';
+import palette from '../../../style/palette';
 
 const SidebarBlock = styled.div`
   position: fixed;
@@ -36,7 +37,7 @@ const SidebarBlock = styled.div`
     max-width: 100%;
     padding-left: 30px;
     padding-top: 30px;
-    background: #fff2df;
+    background: ${palette.beige[0]};
     transform: translateX(100%);
     transition: transform .5s cubic-bezier(.4, 0, .6, 1);
     li {
@@ -44,7 +45,7 @@ const SidebarBlock = styled.div`
       cursor: pointer;
       transition: .3s;
       &:hover {
-        color: #f9796d;
+        color: ${palette.pink[2]};
       }
       a {
         display: block;

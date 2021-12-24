@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { editComment, fetchCreaterecomment, fetchRemoveComment, fetchUpdateComment, removeComment } from '../../feature/commentSlice';
 import checkTime from '../../lib/Time';
+import palette from '../../style/palette';
 
 const SingleCommentBlock = styled.div`
   .single-comment-wrap {
@@ -14,7 +15,7 @@ const SingleCommentBlock = styled.div`
       align-items: flex-end;
       .text {
         width: 100%;
-        border-bottom: 2px solid #575F95;
+        border-bottom: 2px solid ${palette.blue[2]};
         textarea {
           width: 100%;
           height: 35px;
@@ -32,10 +33,10 @@ const SingleCommentBlock = styled.div`
         cursor: pointer;
         display: flex;
         align-items: center;
-        color: #575F95;
+        color: ${palette.blue[2]};
         transition: .3s;
         &:hover {
-          color: #f9796d;
+          color: ${palette.pink[2]};
         }
       }
       .edit-btn {
@@ -64,9 +65,9 @@ const SingleCommentBlock = styled.div`
       padding: 0.5rem 0; 
       border: none;
       color: inherit;
-      border-bottom: 2px solid #575F95;
+      border-bottom: 2px solid ${palette.blue[2]};
       &::placeholder {
-        color: #bcbdc4;
+        color: ${palette.gray[0]};
         font-size: 1rem;
       }
       &:focus {
@@ -79,7 +80,7 @@ const SingleCommentBlock = styled.div`
       font-size: 1rem;
       transition: .3s;
       &:hover {
-        color: #f9796d;
+        color: ${palette.pink[2]};
       }
     }
   }

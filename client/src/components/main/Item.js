@@ -6,12 +6,13 @@ import { useDispatch } from 'react-redux';
 import { fetchRemoveWish, fetchWish } from '../../feature/wishSlice';
 import { changeWish } from '../../feature/postsSlice';
 import DefaultImg from '../../style/images/defaultImg.png';
+import palette from '../../style/palette';
 
 const ItemBlock = styled.li`
   width: 100%;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     2px 2px 5px rgba(94, 104, 121, 0.3);
-  background: #ffdeb7;
+  background: ${palette.beige[1]};
   padding: 0.5rem;
   .item-img {
     position: relative;
@@ -44,7 +45,7 @@ const ItemBlock = styled.li`
       pointer-events: none;
       span {
         color: #fff;
-        background:#f9796d;
+        background:${palette.pink[2]};
         padding: 0 0.2rem 0.1rem;
         border-radius: 4px 0 0 0 ;
       }

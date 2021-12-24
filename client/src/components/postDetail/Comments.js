@@ -5,6 +5,7 @@ import SingleComment from './SingleComment';
 import ReplyComment from './ReplyComment';
 import { useDispatch } from 'react-redux';
 import { fetchCreateComment, fetchGetAllComments } from '../../feature/commentSlice';
+import palette from '../../style/palette';
 
 const CommentsBlock = styled.div`
   padding-bottom: 3rem;
@@ -21,14 +22,14 @@ const CommentsBlock = styled.div`
       margin-right: 1rem;
       padding: 0.5rem; 
       color: inherit;
-      border: 2px solid #575F95;
+      border: 2px solid ${palette.blue[2]};
       border-radius: 4px;
       &::placeholder {
-        color: #bcbdc4;
+        color: ${palette.gray[0]};
         font-size: 1rem;
       }
       &:focus {
-        border: 2px solid #fcb0a9;
+        border: 2px solid ${palette.pink[0]};
       }
     }
   }

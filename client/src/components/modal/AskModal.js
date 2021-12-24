@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
 import WhiteButton from '../common/WhiteButton';
+import palette from '../../style/palette';
 
 const ModalBackground = styled.div`
   z-index: 100;
@@ -26,7 +27,7 @@ const ModalBox = styled.div`
   h2 {
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #575F95;
+    border-bottom: 2px solid ${palette.blue[2]};
   }
   .ask-login {
     margin-bottom: 3rem;

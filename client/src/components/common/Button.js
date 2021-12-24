@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import palette from '../../style/palette';
+
 const ButtonStyle = styled.button`
-    border-radius: 5px;
+    border-radius: 4px;
     padding: 0.25rem 1rem;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background: #575F95;
-    border: 1px solid #575F95;
+    background: ${palette.blue[2]};
+    border: 1px solid ${palette.blue[2]};
     transition: .3s;
     cursor: pointer;
     &:hover {
-        background: #c7cbea;
-        color: #575F95;
-        border: 1px solid #575F95
+        background: ${palette.blue[1]};
+        color: ${palette.blue[2]};
+        border: 1px solid ${palette.blue[2]};
     }
 `;
 

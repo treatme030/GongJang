@@ -9,6 +9,7 @@ import WhiteButton from '../components/common/WhiteButton';
 import { changeField, fetchUpdatePost, fetchWritePost, initialize, removeImage } from '../feature/writeSlice';
 import SalesStatus from '../components/write/SalesStatus';
 import AskModal from '../components/modal/AskModal';
+import palette from '../style/palette';
 
 const WriteBlock = styled.div`
   width: 1130px;
@@ -19,19 +20,19 @@ const WriteBlock = styled.div`
       font-size: 1.2rem;
       padding: 1rem 0 0.5rem;
       color: inherit;
-      border-bottom: 2px solid  #575f95;
+      border-bottom: 2px solid  ${palette.blue[2]};
       &::placeholder {
-        color: #bcbdc4;
+        color: ${palette.gray[0]};
       }
       &:focus {
-        border-bottom: 2px solid  #fcb0a9;
+        border-bottom: 2px solid  ${palette.pink[0]};
       }
     }
     .info-title {
       display: inline-block;
       padding: 0.8rem;
       color: #fff;
-      background: #575F95;
+      background: ${palette.blue[2]};
       border-radius: 20px 20px 0 0;
       p {
         font-size: 1.2rem;
@@ -44,10 +45,10 @@ const WriteBlock = styled.div`
       padding: 1rem;
       font-size: 1.2rem;
       color: inherit;
-      border: 2px solid #575F95;
+      border: 2px solid ${palette.blue[2]};
       &::placeholder {
         font-size: inherit;
-        color: #bcbdc4;
+        color: ${palette.gray[0]};
       }
     }
     .select-box {

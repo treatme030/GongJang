@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Button from '../components/common/Button';
 import { fetchUpdatePassword, initialize } from '../feature/userSlice';
+import palette from '../style/palette';
 
 const AuthBackground = styled.div`
   margin-top: 200px;
@@ -26,7 +27,7 @@ const AuthUpdatePasswordBlock = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color: #575f95;
+    color: ${palette.blue[2]};
     font-weight: 700;
   };
 `;

@@ -4,11 +4,13 @@ import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaTimes } from 'react-icons/fa';
 import { fetchRemovePost } from '../../feature/postSlice';
+import palette from '../../style/palette';
+
 const MyPostBlock = styled.li`
   width: 100%;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     2px 2px 5px rgba(94, 104, 121, 0.3);
-  background: #ffdeb7;
+  background: ${palette.beige[1]};
   padding: 0.5rem;
   .item-img {
     position: relative;
@@ -41,7 +43,7 @@ const MyPostBlock = styled.li`
       pointer-events: none;
       span {
         color: #fff;
-        background:#f9796d;
+        background: ${palette.pink[2]};
         padding: 0 0.2rem 0.1rem;
         border-radius: 4px 0 0 0 ;
       }

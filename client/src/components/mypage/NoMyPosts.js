@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BsFillEmojiExpressionlessFill } from 'react-icons/bs'
-const NoMyPosts = () => {
+import { BsFillEmojiExpressionlessFill } from 'react-icons/bs';
 
-  const NoResultBlock = styled.div`
+const NoResultBlock = styled.div`
   height: 80vh;
   position: relative;
   .no-result-box {
@@ -18,23 +17,22 @@ const NoMyPosts = () => {
     flex-direction: column;
     align-items: center;
   }
-  
   .no-result-icon { 
     font-size: 150px;
   }
-
   .no-result-message {
     margin-top: 30px;
     font-size: 25px;
     width: 100%;
     display: flex;
     justify-content: center;
-    
     span {
       text-align: center;
     }
   }
 `;
+
+const NoMyPosts = () => {
 
   return (
     <NoResultBlock>

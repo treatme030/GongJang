@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FiSearch, FiEdit, FiHeart } from 'react-icons/fi';
 import { AiOutlineUser } from 'react-icons/ai';
+import palette from '../../../style/palette';
 
 const MenuIconsBlock = styled.ul`
   flex: 1;
@@ -14,10 +15,10 @@ const MenuIconsBlock = styled.ul`
     height: 100%;
     display: flex;
     align-items: center;
-    color: #575f95;
+    color: ${palette.blue[2]};
     transition: .3s;
     &:hover {
-      color: #f9796d;
+      color: ${palette.pink[2]};
     }
     a {
       width: 100%;

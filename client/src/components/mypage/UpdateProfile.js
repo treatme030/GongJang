@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { changeNickname, fetchUpdateUserInfo, initialize } from '../../feature/userSlice';
 import AskModal from '../modal/AskModal';
+import palette from '../../style/palette';
 
 const UpdateProfileBlock = styled.div`
   display: flex;
@@ -28,17 +29,17 @@ const UpdateProfileForm = styled.div`
     margin-bottom: 2rem;
     input {
       height: 40px;
-      border-bottom: solid 1px #bcbdc4;
+      border-bottom: solid 1px ${palette.gray[0]};
       font-size: 1.4rem;
       &::placeholder {
-        color: #bcbdc4;
+        color: ${palette.gray[0]};
       }
     }
     span {
       cursor: pointer;
       transition: .3s;
       &:hover {
-        color: #fa8072;
+        color: ${palette.pink[1]};
       }
     }
   }
@@ -49,13 +50,13 @@ const UpdateProfileForm = styled.div`
     p {
       flex: 1;
       height: 40px;
-      border-bottom: solid 1px #bcbdc4;
+      border-bottom: solid 1px ${palette.gray[0]};
       font-size: 1.4rem;
     }
     a {
       transition: .3s;
       &:hover {
-        color: #fa8072;
+        color: ${palette.pink[1]};
       }
     }
   }
@@ -83,7 +84,7 @@ const ErrorMessage = styled.div`
   align-items: end;
   right: 297px;
   font-size: 13px;
-  color: #fa8072;
+  color: ${palette.pink[1]};
 `;
 
 const UpdateProfile = ({ user, userInfoError, isEdited, setNewNickname, newNickname }) => {

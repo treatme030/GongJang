@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
+import palette from '../../style/palette';
 
 const FooterBlock = styled.footer`
   display: flex;
@@ -19,15 +20,15 @@ const FooterBlock = styled.footer`
       padding: 0.5rem;
       margin-right: 0.5rem;
       p {
-        color: #b2b0b0;
+        color: ${palette.gray[1]};
         margin: 0.3rem 0;
       }
       a {
         font-size: 1.5rem;
-        color: #575f95;
+        color: ${palette.blue[2]};
         transition: .3s;
         &:hover {
-          color: #b2b0b0;
+          color: ${palette.gray[1]};
         }
       }
     }

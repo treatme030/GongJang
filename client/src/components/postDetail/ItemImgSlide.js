@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import SlideImgModal from '../modal/SlideImgModal';
 import DefaultImg from '../../style/images/defaultImg.png';
+import palette from '../../style/palette';
 
 const ItemImgSlideBlock = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const ItemImgSlideBlock = styled.div`
     max-width: 280px;
     width: 100%;
     height: 280px;
-    background: #ffdeb7;
+    background: ${palette.beige[1]};
     .slide {
       position: relative;
       width: 100%;

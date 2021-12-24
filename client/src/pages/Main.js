@@ -7,6 +7,7 @@ import GameImg from '../components/main/GameImg';
 import Loading from '../components/common/Loading';
 import { fetchGetAllPosts } from '../feature/postsSlice';
 import AskModal from '../components/modal/AskModal';
+import palette from '../style/palette';
 
 const MainBlock = styled.div`
   width: 1130px;
@@ -22,7 +23,7 @@ const MainBlock = styled.div`
       top: 50%;
       height: 2px;
       width: 50px;
-      background: #575f95;
+      background: ${palette.blue[2]};
     }
     &:after {
       left: 35%;
