@@ -1,8 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { fetchGetAllPosts } from '../../../feature/postsSlice';
 import palette from '../../../style/palette';
 
 const CategoryList = styled.ul`
@@ -27,24 +25,15 @@ const CategoryList = styled.ul`
 `;
 
 const Categories = ({ categories }) => {
-
-  const dispatch = useDispatch();
-  const history = useHistory();
-
-  const handleCategory = (category) => {
-    history.push('/')
-    if(category === '전체'){
-      setTimeout(() => {dispatch(fetchGetAllPosts())}, 300)
-    } else {
-      setTimeout(() => {dispatch(fetchGetAllPosts({ category : category }))}, 300)
-    }
-  }
-
   return (
     <CategoryList>
       {
         categories.map((category, idx) => 
-          <Link to={`/?category=${category}`} className="category-menu" key={idx} onClick={() => handleCategory(category, idx)} >{category}</Link>
+          <Link 
+          to={category === '전체' ? '/' : `/?category=${category}`} 
+          className="category-menu" 
+          key={idx} 
+          >{category}</Link>
         )
       }
     </CategoryList>

@@ -1,20 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import qs from "qs";
-axios.default.paramsSerializer = params => {
-  return qs.stringify(params);
-}
 
 export const fetchGetAllPosts = createAsyncThunk(
   'posts/fetchGetAllPosts',
   async ( form ) => {
     try {
-      const params = form;
-      const response = await axios.get('/posts', 
-        { 
-          params        
-        }
-      );
+      const { search, category } = form;
+      const queryString = qs.stringify({
+        search,
+        category
+      })
+      const response = await axios.get(`/posts?${queryString}`);
       return response.data;
     } catch(err){
       return err.response.data;

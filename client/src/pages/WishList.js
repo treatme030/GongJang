@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import qs from 'qs';
 import styled from 'styled-components';
 import Wish from '../components/wishlist/Wish';
 import { fetchGetAllPosts } from '../feature/postsSlice';
@@ -55,17 +57,29 @@ const WishListBlock = styled.div`
 
 const WishList = () => {
   const [modal, setModal] = useState(false);
+  const dispatch = useDispatch();
+  const location = useLocation();
   const { posts, user, wish } = useSelector(({ posts, user, wish }) => ({
     posts: posts.posts,
     user: user.user,
     wish: wish.wish
   }));
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGetAllPosts());
-  },[dispatch])
-
+    const { search, category } = qs.parse(location.search, {
+      ignoreQueryPrefix: true,
+    })
+    const form = {
+      search: search,
+      category: category
+    }
+    if(!user){
+      dispatch(fetchGetAllPosts(form));
+    } else {
+      dispatch(fetchGetAllPosts(form));
+    }
+  },[dispatch, location.search, user]);
+  
   return (
     <WishListBlock>
       <div className="title">

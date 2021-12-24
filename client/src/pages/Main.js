@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
+import qs from 'qs';
 import styled from 'styled-components';
 import ItemList from '../components/main/ItemList';
 import GameImg from '../components/main/GameImg';
@@ -64,6 +65,7 @@ const MainBlock = styled.div`
 const Main = () => {
   const [modal, setModal] = useState(false);
   const history = useHistory();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { posts, loading, user } = useSelector(({ posts, user }) => ({
     posts: posts.posts,
@@ -81,12 +83,19 @@ const Main = () => {
   }
 
   useEffect(() => {
-    if(!user){
-      dispatch(fetchGetAllPosts());
-    } else {
-      dispatch(fetchGetAllPosts());
+    const { search, category } = qs.parse(location.search, {
+      ignoreQueryPrefix: true,
+    })
+    const form = {
+      search: search,
+      category: category
     }
-  },[dispatch, user]);
+    if(!user){
+      dispatch(fetchGetAllPosts(form));
+    } else {
+      dispatch(fetchGetAllPosts(form));
+    }
+  },[dispatch, location.search, user]);
   
   if(loading || posts.length === 0){
     return <Loading/>;

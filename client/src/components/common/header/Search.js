@@ -96,28 +96,20 @@ const SearchBlock = styled.div`
 `;
 
 const Search = ({ onClick }) => {
-
+  const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [search, setSearch] = useState("");
-
   const categories = ['전체', '장난감', '인형', '보드게임', '퍼즐', '기타'];
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  }
-
-  const handleSubmit = () => {
-    history.push('/')
-    setTimeout(() => {dispatch(fetchGetAllPosts({ search: search }));}, 500)
-  }
 
   const onKeyPress = (e) => {
     if(e.key === 'Enter'){
-      handleSubmit(e);
+      history.push(`/?search=${search}`);
+      dispatch(fetchGetAllPosts({ search: search }));
     }
+    setSearch('');
   }
+
   return (
     <SearchBlock>
       <div className="wrap">
@@ -126,11 +118,11 @@ const Search = ({ onClick }) => {
             <input 
             type="text"
             placeholder="나눔 아이템을 검색하세요." 
-            defaultValue=""
-            onChange={(e) => handleSearch(e)}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             onKeyPress={onKeyPress}
             />
-            <div className="search-icon" onClick={handleSubmit} >
+            <div className="search-icon">
               <FiSearch/>
             </div>
           </div>
